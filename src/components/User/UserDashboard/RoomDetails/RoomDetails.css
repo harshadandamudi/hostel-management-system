@@ -1,0 +1,232 @@
+.room-details-container {
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.room-header {
+  margin-bottom: 2rem;
+}
+
+.room-header h2 {
+  color: #1e293b;
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+.room-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.room-info-card {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.room-info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.info-icon {
+  width: 40px;
+  height: 40px;
+  background: #3b82f6;
+  color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.info-content h3 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.label {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.value {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.status-active {
+  color: #10b981;
+}
+
+.status-good {
+  color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .room-details-container {
+    padding: 1rem;
+  }
+
+  .room-info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-details-tab {
+  padding: 20px;
+  background: #f8fafc;
+}
+
+.user-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.user-details-header h2 {
+  color: #1e293b;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.edit-btn,
+.save-btn,
+.cancel-btn {
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edit-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+}
+
+.edit-btn:hover {
+  background: #2563eb;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.save-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+}
+
+.save-btn:hover {
+  background: #059669;
+}
+
+.cancel-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+.cancel-btn:hover {
+  background: #dc2626;
+}
+
+.user-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.details-section {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.details-section h3 {
+  color: #1e293b;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detail-item label {
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.detail-item p {
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+.detail-item input {
+  padding: 8px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: border-color 0.2s;
+}
+
+.detail-item input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+@media (max-width: 768px) {
+  .user-details-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+} 

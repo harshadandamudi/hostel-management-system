@@ -1,0 +1,183 @@
+.ud-profile-2col-layout {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: calc(100vh - 40px); /* Adjust if you have a header */
+  min-height: 0;
+}
+@media (max-width: 1100px) {
+  .ud-profile-2col-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    height: auto;
+  }
+}
+
+.ud-profile-sidebar-modern {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+  padding: 3rem 2.5rem;
+  min-width: 340px;
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+  position: sticky;
+  top: 40px;
+}
+
+.ud-profile-img-lg, .ud-profile-img-placeholder-lg {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid #3b82f6;
+  object-fit: cover;
+  background: #f1f5f9;
+  margin-bottom: 1.5rem;
+}
+
+.ud-profile-sidebar-modern h2 {
+  color: #1e293b;
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  text-align: center;
+}
+.ud-status-badge {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  padding: 0.35rem 1.5rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+.ud-profile-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #64748b;
+  font-size: 1.08rem;
+  margin: 0.1rem 0;
+  text-align: left;
+  word-break: break-all;
+}
+
+.ud-profile-maincard-single {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(59,130,246,0.10), 0 1.5px 4px rgba(0,0,0,0.06);
+  padding: 2.5rem 2rem;
+  min-width: 320px;
+  max-width: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+}
+.ud-profile-maincard-single::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.ud-profile-section-title-main {
+  color: #3b82f6;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.ud-profile-section-content-single {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.ud-profile-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+.ud-profile-section-icon {
+  color: #3b82f6;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+.ud-profile-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.ud-profile-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.ud-profile-label {
+  width: 160px;
+  color: #64748b;
+  font-weight: 500;
+  text-align: left;
+  display: inline-block;
+}
+.ud-profile-value {
+  color: #1e293b;
+  font-weight: 400;
+  text-align: left;
+  word-break: break-all;
+}
+.ud-profile-link {
+  color: #3b82f6;
+  text-decoration: underline;
+  font-weight: 500;
+}
+.ud-profile-divider {
+  height: 1px;
+  background: #e5e7eb;
+  margin: 0.5rem 0;
+  border: none;
+}
+
+.ud-loading-container, .ud-error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #64748b;
+}
+.ud-loading-spinner {
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #3b82f6;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes udFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

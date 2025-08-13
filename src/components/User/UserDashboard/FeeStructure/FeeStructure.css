@@ -1,0 +1,144 @@
+.tab-content {
+  padding: 1.5rem;
+  background: #061129;
+  min-height: calc(100vh - 64px);
+}
+
+.fee-structure {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -10px;
+}
+
+.fee-structure-header {
+  text-align: center;
+  margin-top: -15px;
+  margin-bottom: 2rem;
+}
+
+.fee-structure-header h2 {
+  color: #1a365d;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.fee-structure-header p {
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+.fee-structure-table {
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  margin-top: -15px;
+  background: #f7fafc;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.fee-structure-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: transparent;
+}
+
+.fee-structure-table th {
+  background: #2b6cb0;
+  color: white;
+  font-weight: 600;
+  padding: 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fee-structure-table th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+
+.fee-structure-table th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+
+.fee-structure-table td {
+  padding: 1rem;
+  color: #4a5568;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.fee-structure-table tr:last-child td {
+  border-bottom: none;
+}
+
+.fee-structure-table tr:hover td {
+  background: #edf2f7;
+}
+
+.fee-structure-table td:first-child {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.fee-structure-notes {
+  background: #f7fafc;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.fee-structure-notes h3 {
+  color: #1a365d;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.fee-structure-notes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fee-structure-notes li {
+  color: #4a5568;
+  font-size: 0.875rem;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fee-structure-notes li::before {
+  content: "•";
+  color: #2b6cb0;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .tab-content {
+    padding: 1rem;
+  }
+
+  .fee-structure {
+    padding: 1rem;
+  }
+
+  .fee-structure-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .fee-structure-table th,
+  .fee-structure-table td {
+    padding: 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .fee-structure-notes {
+    padding: 1rem;
+  }
+} 
