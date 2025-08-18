@@ -16,7 +16,7 @@ const PaymentManagement = () => {
   const fetchPayments = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/payments');
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments`);
       if (!res.ok) throw new Error('Failed to fetch payments');
       const data = await res.json();
       setPayments(data);
@@ -28,12 +28,12 @@ const PaymentManagement = () => {
   };
 
   const handleMarkPaid = async (paymentId) => {
-    await fetch(`http://localhost:5000/api/payments/${paymentId}/mark-paid`, { method: 'PUT' });
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/${paymentId}/mark-paid`, { method: 'PUT' });
     fetchPayments();
   };
 
   const handleMarkFailed = async (paymentId) => {
-    await fetch(`http://localhost:5000/api/payments/${paymentId}/mark-failed`, { method: 'PUT' });
+    await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payments/${paymentId}/mark-failed`, { method: 'PUT' });
     fetchPayments();
   };
 

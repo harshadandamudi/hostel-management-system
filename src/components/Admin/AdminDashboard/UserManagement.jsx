@@ -25,7 +25,7 @@ const UserManagement = () => {
       const token = localStorage.getItem('adminToken');
       if (!token) throw new Error('Admin token not found. Please log in again.');
 
-      const response = await fetch('http://localhost:5000/api/admin/users', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/users`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const UserManagement = () => {
   const handleApprove = async (userId) => {
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/admin/users/${userId}/approve`, {
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/users/${userId}/approve`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const UserManagement = () => {
   const handleReject = async (userId) => {
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/admin/users/${userId}/reject`, {
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/users/${userId}/reject`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ const UserManagement = () => {
   const executeDelete = async () => {
     try {
       const token = localStorage.getItem('adminToken');
-      await fetch(`http://localhost:5000/api/admin/users/${confirmData.userId}`, {
+      await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/users/${confirmData.userId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -134,7 +134,7 @@ const UserManagement = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem('adminToken');
-      const response = await fetch(`http://localhost:5000/api/admin/users/${editingUser._id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/users/${editingUser._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

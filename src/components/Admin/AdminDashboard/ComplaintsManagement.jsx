@@ -23,7 +23,7 @@ const ComplaintsManagement = () => {
   const fetchComplaints = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/complaints');
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch complaints');
@@ -42,7 +42,7 @@ const ComplaintsManagement = () => {
   const handleUpdateStatus = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000/api/complaints/${selectedComplaint._id}/status`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints/${selectedComplaint._id}/status`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ const ComplaintsManagement = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/complaints/${complaintId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints/${complaintId}`, {
         method: 'DELETE',
       });
 

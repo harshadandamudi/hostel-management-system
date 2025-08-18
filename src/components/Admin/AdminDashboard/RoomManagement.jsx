@@ -40,7 +40,7 @@ const RoomManagement = () => {
         console.log("Making request with token:", token);
         console.log("Authorization header:", `Bearer ${token}`);
         
-        const response = await fetch('/api/admin/rooms', {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/rooms`, {
           headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -130,7 +130,7 @@ const RoomManagement = () => {
     if (roomToDeleteId) {
       try {
         console.log("Deleting room with token:", token);
-        const response = await fetch(`/api/admin/rooms/${roomToDeleteId}`, { 
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/rooms/${roomToDeleteId}`, { 
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -163,7 +163,7 @@ const RoomManagement = () => {
       console.log("Submitting form with token:", token);
       if (selectedRoom) {
         console.log("Updating room:", selectedRoom._id);
-        const response = await fetch(`/api/admin/rooms/${selectedRoom._id}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/rooms/${selectedRoom._id}`, {
           method: 'PUT',
           headers: { 
             'Authorization': `Bearer ${token}`,
@@ -183,7 +183,7 @@ const RoomManagement = () => {
         ));
       } else {
         console.log("Creating new room");
-        const response = await fetch('/api/admin/rooms', {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/admin/rooms`, {
           method: 'POST',
           headers: { 
             'Authorization': `Bearer ${token}`,

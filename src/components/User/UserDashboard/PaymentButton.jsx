@@ -6,7 +6,7 @@ import React from 'react';
 const PaymentButton = ({ amount, user }) => {
   const handlePayment = async () => {
     // 1. Create order on backend
-    const res = await fetch('http://localhost:5000/api/payment/orders', {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payment/orders`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ amount: 1, currency: 'INR', receipt: `rcptid_${Date.now()}` })
@@ -25,7 +25,7 @@ const PaymentButton = ({ amount, user }) => {
       handler: async function (response) {
         // Send payment details to backend for verification
         try {
-          const verifyRes = await fetch('http://localhost:5000/api/payment/verify', {
+          const verifyRes = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/payment/verify`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({

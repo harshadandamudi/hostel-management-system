@@ -30,7 +30,7 @@ const MenuManagement = () => {
   const fetchMenuData = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/menu');
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu`);
       if (!response.ok) {
         throw new Error('Failed to fetch menu data');
       }
@@ -47,7 +47,7 @@ const MenuManagement = () => {
     try {
       if (!itemInput.trim()) return;
 
-      const response = await fetch('http://localhost:5000/api/menu/item', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu/item`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const MenuManagement = () => {
     try {
       if (!itemInput.trim()) return;
 
-      const response = await fetch('http://localhost:5000/api/menu/item', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu/item`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +111,7 @@ const MenuManagement = () => {
     try {
       if (!timeInput.trim()) return;
 
-      const response = await fetch('http://localhost:5000/api/menu/meal', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu/meal`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ const MenuManagement = () => {
     try {
       if (confirmAction === 'deleteItem') {
         const { day, meal, item } = confirmData;
-        const response = await fetch('http://localhost:5000/api/menu/item', {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu/item`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -163,7 +163,7 @@ const MenuManagement = () => {
         }
       } else if (confirmAction === 'deleteMeal') {
         const { day, meal } = confirmData;
-        const response = await fetch('http://localhost:5000/api/menu/meal', {
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/menu/meal`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',

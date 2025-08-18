@@ -30,7 +30,7 @@ const ComplaintsList = () => {
     try {
       setLoading(true);
       const userId = user?.id || user?.userId || 'default';
-      const response = await fetch(`http://localhost:5000/api/complaints/user/${userId}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints/user/${userId}`);
       
       if (!response.ok) {
         throw new Error('Failed to fetch complaints');
@@ -56,7 +56,7 @@ const ComplaintsList = () => {
         ...newComplaint
       };
 
-      const response = await fetch('http://localhost:5000/api/complaints', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const ComplaintsList = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/complaints/${complaintId}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/complaints/${complaintId}`, {
         method: 'DELETE',
       });
 
