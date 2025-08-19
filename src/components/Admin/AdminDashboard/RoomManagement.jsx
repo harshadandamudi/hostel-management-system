@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FaBed, FaUser, FaEdit, FaTrash, FaPlus, FaSearch, FaSort, FaFilter } from 'react-icons/fa';
 import './RoomManagement.css';
-import ConfirmationDialog from '../../Common/ConfirmationDialog';
+import ConfirmationDialog from '../../common/ConfirmationDialog';
 import { useAuth } from '../../../context/AuthContext';
 
 const RoomManagement = () => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUtensils, FaPlus, FaEdit, FaTrash, FaCalendarAlt, FaTimes, FaSearch, FaCoffee, FaHamburger, FaPizzaSlice, FaIceCream, FaAppleAlt, FaCarrot, FaDrumstickBite, FaFish, FaBreadSlice, FaEgg, FaCheese, FaLeaf } from 'react-icons/fa';
-import ConfirmationDialog from '../../Common/ConfirmationDialog';
+import ConfirmationDialog from '../../common/ConfirmationDialog';
 import './MenuManagement.css';
 
 const MenuManagement = () => {

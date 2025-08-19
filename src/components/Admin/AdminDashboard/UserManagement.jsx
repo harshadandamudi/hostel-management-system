@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaUser, FaSearch, FaEdit, FaTrash, FaCheck, FaTimes } from 'react-icons/fa';
-import ConfirmationDialog from '../../Common/ConfirmationDialog';
+import ConfirmationDialog from '../../common/ConfirmationDialog';
 import './UserManagement.css';
 
 const UserManagement = () => {
