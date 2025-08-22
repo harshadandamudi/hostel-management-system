@@ -92,17 +92,26 @@ const Registration = () => {
           if (value) data.append(key, value);
         });
   
-        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/register`, {
+        console.log('Sending registration request to:', `${import.meta.env.VITE_API_BASE_URL}/api/register`);
+        
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/register`, {
           method: 'POST',
           body: data,
         });
   
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
+        
         const result = await response.json();
+        console.log('Response result:', result);
+        
         if (response.ok) {
+          console.log('Registration successful!');
           setShowNotification(true);
           setTimeout(() => setShowNotification(false), 3000);
         } else {
-          alert(result.message || 'Something went wrong!');
+          console.log('Registration failed:', result);
+          alert(result.message || result.error || 'Something went wrong!');
         }
       } catch (err) {
         console.error('Submission error:', err);
