@@ -30,6 +30,12 @@ const Registration = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [touched, setTouched] = useState({
+    idProof: false,
+    profilePicture: false,
+    roomPreference: false,
+  });
 
   const validateStep = (step) => {
     const newErrors = {};
@@ -80,6 +86,7 @@ const Registration = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitted(true);
   
     const isStep1Valid = validateStep(1);
     const isStep2Valid = validateStep(2);
@@ -127,6 +134,11 @@ const Registration = () => {
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
+    
+    // mark field as touched
+    if (name in touched) {
+      setTouched(prev => ({ ...prev, [name]: true }));
+    }
     
     // Only allow digits for phone and emergency contact
     if (name === 'phone' || name === 'emergencyContact') {
@@ -324,8 +336,11 @@ const Registration = () => {
                 type="file"
                 name="idProof"
                 onChange={handleChange}
-                className={`file-input ${errors.idProof ? 'error' : ''}`}
+                className={`file-input ${((submitted || touched.idProof) && errors.idProof) ? 'error' : ''}`}
               />
+              {((submitted || touched.idProof) && errors.idProof) && (
+                <span className="error">{errors.idProof}</span>
+              )}
             </div>
             <div className="input-group">
               <label>Profile Picture</label>
@@ -341,13 +356,16 @@ const Registration = () => {
                 name="roomPreference"
                 value={formData.roomPreference}
                 onChange={handleChange}
-                className={errors.roomPreference ? 'error' : ''}
+                className={((submitted || touched.roomPreference) && errors.roomPreference) ? 'error' : ''}
               >
                 <option value="">Select Room Preference</option>
                 <option value="single">Single Room</option>
                 <option value="double">Double Room</option>
                 <option value="shared">Shared Room</option>
               </select>
+              {((submitted || touched.roomPreference) && errors.roomPreference) && (
+                <span className="error">{errors.roomPreference}</span>
+              )}
             </div>
             <div className="input-group">
               <textarea
